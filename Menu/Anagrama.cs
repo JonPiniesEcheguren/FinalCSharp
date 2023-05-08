@@ -3,8 +3,10 @@ class Anagram
 {
     public void anagrama()
     {
-        string palabra1 = "roma";
-        string palabra2 = "amor";
+        WriteLine("Introduzca la primera palabra a comparar: ");
+        string? palabra1 = ReadLine();
+        WriteLine("Introduzca la segunda palabra a comparar: ");
+        string? palabra2 = ReadLine();
 
         char[] letras1 = palabra1.ToLower().ToCharArray();
         char[] letras2 = palabra2.ToLower().ToCharArray();

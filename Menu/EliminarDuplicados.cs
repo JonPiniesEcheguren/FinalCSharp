@@ -4,20 +4,37 @@ class Duplicados
 {
     public void eliminarDuplicados()
     {
-        List<int> numeros = new List<int>() { 10, 20, 30, 20, 50 };
-
+        List<int> numeros = new List<int>();
         List<int> numerosSinDuplicados = new List<int>();
+        string numero = "0";
+        int num;
+        while(numero.Length>0){
+            WriteLine("Introduzca un nuevo número a la lista. Enter para finalizar");
+            numero = ReadLine();
+            try {
+                Int32.TryParse(numero, out num);
+                if (numero.Length>0){
+                numeros.Add(num);
+                }
+            }
+            catch {
+                if (numero != "") {
+                WriteLine("Entrada inválida");
+                continue;
+                }
+            }
+        }
 
-        foreach (int numero in numeros)
+        foreach (int numer in numeros)
         {
-            if (!numerosSinDuplicados.Contains(numero))
+            if (!numerosSinDuplicados.Contains(numer))
             {
-                numerosSinDuplicados.Add(numero);
+                numerosSinDuplicados.Add(numer);
             }
         }
 
         WriteLine("Números originales: " + string.Join(", ", numeros));
-        WriteLine("Números originales: " + string.Join(", ", numeros));
+        WriteLine("Números sin duplicar: " + string.Join(", ", numerosSinDuplicados));
 
     }
 }

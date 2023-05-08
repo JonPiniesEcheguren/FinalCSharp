@@ -5,13 +5,31 @@ class Pares
 
     public void sumaNumerosPares()
     {
-        List<int> numeros = new List<int>() { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+        List<int> numeros = new List<int>();
         int suma = 0;
-
-        foreach (int num in numeros)
+        string numero = "0";
+        int num;
+        while(numero.Length>0){
+            WriteLine("Introduzca un nuevo número a la lista. Enter para finalizar");
+            numero = ReadLine();
+            try {
+                Int32.TryParse(numero, out num);
+                if (numero.Length>0){
+                numeros.Add(num);
+                }
+            }
+            catch {
+                if (numero != "") {
+                WriteLine("Entrada inválida");
+                continue;
+                }
+            }
+        }
+        
+        foreach (int nume in numeros)
         {
-            if (num % 2 == 0)
-                suma += num;
+            if (nume % 2 == 0)
+                suma += nume;
         }
 
         WriteLine("La suma de los números pares es {0}", suma);

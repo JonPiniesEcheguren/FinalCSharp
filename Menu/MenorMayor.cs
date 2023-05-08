@@ -2,7 +2,6 @@ using static System.Console;
 
 class MenorMayor
 {
-
     public void menorMayor()
     {
         List<int> numerosEnteros = new List<int>();
